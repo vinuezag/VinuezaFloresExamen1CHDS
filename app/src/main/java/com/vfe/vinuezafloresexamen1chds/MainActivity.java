@@ -2,14 +2,12 @@ package com.vfe.vinuezafloresexamen1chds;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -17,9 +15,15 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView textViewRespuesta;
+    private Spinner spinner;
+    private String urlBase = "http://10.10.29.68:3000/"; // Cambia esto a tu IP local o servidor
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,40 +31,77 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textViewRespuesta = findViewById(R.id.lbl_HM);
+        spinner = findViewById(R.id.spinner_cat);
 
-        // Obtener el botón
-        Button sendRequestButton = findViewById(R.id.btn_saludar);
+        // Configurar el adaptador del Spinner
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.categorias, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
-        sendRequestButton.setOnClickListener(new View.OnClickListener() {
+        // Manejar la selección del Spinner
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                // Ejecutar la solicitud HTTP usando Volley
-                Solicitud();
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String opcionSeleccionada = parent.getItemAtPosition(position).toString();
+                realizarSolicitud(opcionSeleccionada);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                textViewRespuesta.setText("No se seleccionó ninguna opción.");
             }
         });
-
     }
 
-    private void Solicitud() {
-        // URL de la solicitud
-        String url = "http://10.10.29.68:3000/vinueza"; // Cambia esto según tu servidor
+    private void realizarSolicitud(String opcion) {
+        String urlCompleta = urlBase + opcion; // URL dinámica
 
-        // Crear una solicitud de tipo GET con Volley
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+        // Realizar solicitud GET con Volley
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlCompleta,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        textViewRespuesta.setText("Respuesta del servidor: " + response);
+                        if (opcion.equals("nombre")) {
+                            // Manejar respuesta JSON
+                            manejarJSON(response);
+                        } else {
+                            // Mostrar texto plano
+                            textViewRespuesta.setText("Respuesta del servidor:\n" + response);
+                        }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // Si ocurre un error, mostrar un mensaje de error en el TextView
                         textViewRespuesta.setText("Error en la solicitud: " + error.getMessage());
                     }
                 });
 
+        // Agregar la solicitud a la cola
         Volley.newRequestQueue(this).add(stringRequest);
+    }
+
+    private void manejarJSON(String response) {
+        try {
+            // Parsear el JSON recibido
+            JSONArray jsonArray = new JSONArray(response);
+            StringBuilder resultado = new StringBuilder();
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject objeto = jsonArray.getJSONObject(i);
+                String id = objeto.getString("id");
+                String nombre = objeto.getString("nombre");
+
+                // Concatenar cada elemento
+                resultado.append("ID: ").append(id).append(", Nombre: ").append(nombre).append("\n");
+            }
+
+            // Mostrar resultado en el TextView
+            textViewRespuesta.setText(resultado.toString());
+
+        } catch (JSONException e) {
+            textViewRespuesta.setText("Error al parsear JSON: " + e.getMessage());
+        }
     }
 }
