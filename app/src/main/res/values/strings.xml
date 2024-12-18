@@ -5,6 +5,9 @@
         <item>nombre</item>
         <item>Greta</item>
         <item>suma</item>
+        <item>rectangulo</item>
+        <item>trapecio</item>
+        <item>triangulo</item>
     </string-array>
 
 </resources>
