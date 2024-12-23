@@ -5,112 +5,91 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fon"
+    android:background="@drawable/fondo"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/num5"
-        android:layout_width="91dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472" />
-
-    <EditText
-        android:id="@+id/num4"
-        android:layout_width="91dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.715"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.361" />
-
-    <TextView
-        android:id="@+id/lbl_HM"
-        android:layout_width="343dp"
-        android:layout_height="134dp"
-        android:text="n"
-        android:textColor="@color/white"
-        android:textSize="23dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932" />
-
-    <Spinner
-        android:id="@+id/spinner_cat"
-        android:layout_width="248dp"
-        android:layout_height="46dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087" />
-
-    <EditText
-        android:id="@+id/num1"
-        android:layout_width="87dp"
-        android:layout_height="46dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.293"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235" />
-
-    <EditText
-        android:id="@+id/num2"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.707"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23" />
-
-    <EditText
-        android:id="@+id/num3"
-        android:layout_width="91dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.284"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.362" />
-
     <Button
-        android:id="@+id/btnEnviar"
+        android:id="@+id/btnTrinomio"
         android:layout_width="227dp"
         android:layout_height="56dp"
-        android:text="Button"
+        android:text="Calcular el trinómio cuadrado perfecto"
+        android:background="@drawable/boton"
+        android:textColor="#2E68DC"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601" />
+        app:layout_constraintVertical_bias="0.826" />
+
+    <Button
+        android:id="@+id/btnFiguras"
+        android:layout_width="227dp"
+        android:layout_height="56dp"
+        android:text="Calcular Perímero y Área de Figura geométrica"
+        android:background="@drawable/boton"
+        android:textColor="#2E68DC"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.717" />
+
+    <Button
+        android:id="@+id/btnDescripcion"
+        android:layout_width="227dp"
+        android:layout_height="56dp"
+        android:text="Información Personal"
+        android:background="@drawable/boton"
+        android:textColor="#2E68DC"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.376" />
+
+    <Button
+        android:id="@+id/btnNombre"
+        android:layout_width="227dp"
+        android:layout_height="56dp"
+        android:text="Lista de nombres"
+        android:textColor="#2E68DC"
+        android:textSize="15dp"
+        android:background="@drawable/boton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.257" />
+
+    <Button
+        android:id="@+id/btnSuma"
+        android:layout_width="227dp"
+        android:layout_height="56dp"
+        android:text="Suma de dos números"
+        android:background="@drawable/boton"
+        android:textColor="#2E68DC"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.494" />
+
+    <Button
+        android:id="@+id/btnCalculadora"
+        android:layout_width="227dp"
+        android:layout_height="56dp"
+        android:text="Calcular la suma de dos números"
+        android:background="@drawable/boton"
+        android:textColor="#2E68DC"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.607" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

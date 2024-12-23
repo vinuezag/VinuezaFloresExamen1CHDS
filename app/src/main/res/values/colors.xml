@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Colores básicos -->
+    <color name="black">#FF000000</color>    <!-- Negro -->
+    <color name="white">#FFFFFFFF</color>    <!-- Blanco -->
+    <color name="red">#FFFF0000</color>      <!-- Rojo -->
+    <color name="green">#FF00FF00</color>    <!-- Verde -->
+    <color name="blue">#FF0000FF</color>     <!-- Azul -->
+
+    <!-- Colores de grises -->
+    <color name="gray">#FF808080</color>     <!-- Gris -->
+    <color name="dark_gray">#FF505050</color> <!-- Gris oscuro -->
+    <color name="light_gray">#FFD3D3D3</color> <!-- Gris claro -->
+
+    <!-- Colores pastel -->
+    <color name="light_blue">#FFADD8E6</color>    <!-- Azul pastel -->
+    <color name="light_green">#FF90EE90</color>   <!-- Verde pastel -->
+    <color name="light_yellow">#FFFFE4B5</color>  <!-- Amarillo pastel -->
+    <color name="light_pink">#FFFFB6C1</color>    <!-- Rosa pastel -->
+
+    <!-- Colores primarios y secundarios -->
+    <color name="yellow">#FFFFFF00</color>    <!-- Amarillo -->
+    <color name="cyan">#FF00FFFF</color>      <!-- Cian -->
+    <color name="magenta">#FFFF00FF</color>   <!-- Magenta -->
+
+    <!-- Colores de acento -->
+    <color name="orange">#FFFFA500</color>    <!-- Naranja -->
+    <color name="purple">#FF800080</color>    <!-- Púrpura -->
+    <color name="brown">#A52A2A</color>       <!-- Marrón -->
+    <color name="pink">#FFC0CB</color>        <!-- Rosa -->
+
+    <!-- Colores para estados (ejemplo de botones) -->
+    <color name="button_normal">#FF4CAF50</color>  <!-- Verde normal -->
+    <color name="button_pressed">#FF388E3C</color> <!-- Verde oscuro -->
+    <color name="button_disabled">#FF9E9E9E</color> <!-- Gris para deshabilitado -->
 </resources>

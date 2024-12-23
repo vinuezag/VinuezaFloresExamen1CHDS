@@ -2,12 +2,14 @@
     <string name="app_name">VinuezaFloresExamen1CHDS</string>
 
     <string-array name="categorias">
-        <item>nombre</item>
-        <item>Greta</item>
-        <item>suma</item>
-        <item>rectangulo</item>
-        <item>trapecio</item>
-        <item>triangulo</item>
+        <item>Rectángulo</item>
+        <item>Trapecio</item>
+        <item>Triángulo</item>
+    </string-array>
+
+    <string-array name="calculo">
+        <item>Factorizar</item>
+        <item>Expandir</item>
     </string-array>
 
 </resources>
